@@ -10,6 +10,9 @@ public class FieldNotesHomePage {
     WebDriver driver;
     By productsLinkOnHome = By.xpath("/html/body/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/nav/div[2]/a[1]");
     By products = By.xpath("//*[@id=\"products\"]/div/div[4]/ul/li");
+    By searchField = By.xpath("//input[@type='search']");
+    By searchResultProducts = By.cssSelector(".product-grid__item");
+    //tagName[@attributeName='AttribureValue']
 
     public FieldNotesHomePage(WebDriver driver) {
         this.driver = driver;
@@ -28,5 +31,12 @@ public class FieldNotesHomePage {
         }
         // Return all products
         return allProducts;
+    }
+
+    public void search(String searchTerm) {
+        driver.findElement(searchField).sendKeys(searchTerm);
+        List<WebElement> searchResultProductList = driver.findElements(searchResultProducts);
+        System.out.println("Total product/s for this search → " + searchResultProductList.size());
+        searchResultProductList.stream().forEach(WebElement::getText);
     }
 }
