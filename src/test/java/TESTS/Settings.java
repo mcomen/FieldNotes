@@ -1,6 +1,8 @@
 package TESTS;
 
 import PAGES.FieldNotesHomePage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
@@ -15,6 +17,7 @@ public class Settings {
     // Properties
     WebDriver driver;
     FieldNotesHomePage fieldNotesHomePage;
+    Logger logger;
 
     @BeforeSuite
     public void setUp() throws IOException, InterruptedException {
