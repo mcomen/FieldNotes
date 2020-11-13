@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class HomeTest extends Settings {
     @Test
-    public void testProductsCatalogue() throws Exception {
+    public void testProductsCatalogue() {
         fieldNotesHomePage.productCatalogue();
         fieldNotesHomePage.search("all");
     }
